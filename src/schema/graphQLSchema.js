@@ -22,6 +22,7 @@ import { usuarioMutations, usuarioQueries, usuarioTypeDef } from '../typeDefs/us
 
 import historicoResolvers from '../resolvers/historico';
 import empresaResolvers from '../resolvers/empresa';
+import dataAnalysisResolvers from '../resolvers/dataAnalysis';
 import empresaRelacionadaResolvers from '../resolvers/empresaRelacionada'
 import temaResolvers from '../resolvers/tema';
 import noticiaResolvers from '../resolvers/noticia'
@@ -32,6 +33,9 @@ import newsWatchListResolvers from '../resolvers/newsWatchList'
 import stockWatchListResolvers from '../resolvers/stockWatchList'
 import perfilResolvers from '../resolvers/perfil';
 import usuarioResolvers from '../resolvers/usuario';
+import {dataAnalysisMutations, dataAnalysisQueries, dataAnalysisTypeDef} from "../typeDefs/dataAnalysis";
+
+
 
 const dateScalar = new GraphQLScalarType({
 	name: 'Date',
@@ -65,8 +69,9 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar Date',
 		'scalar JSON',
-		// historicoTypeDef,
-		// empresaTypeDef,
+		historicoTypeDef,
+		empresaTypeDef,
+		dataAnalysisTypeDef,
 		// empresaRelacionadaTypeDef,
 		// temaTypeDef,
 		// noticiaTypeDef,
@@ -79,8 +84,9 @@ const mergedTypeDefs = mergeSchemas(
 		usuarioTypeDef
 	],
 	[
-		// historicoQueries,
-		// empresaQueries,
+		historicoQueries,
+		empresaQueries,
+		dataAnalysisQueries,
 		// empresaRelacionadaQueries,
 		// temaQueries,
 		// noticiaQueries,
@@ -93,8 +99,9 @@ const mergedTypeDefs = mergeSchemas(
 		usuarioQueries
 	],
 	[
-		// historicoMutations,
-		// empresaMutations,
+		historicoMutations,
+		empresaMutations,
+		dataAnalysisMutations,
 		// empresaRelacionadaMutations,
 		// temaMutations,
 		// noticiaMutations,
@@ -113,8 +120,9 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON, Date: dateScalar }, 
-		// historicoResolvers,
-		// empresaResolvers,
+		historicoResolvers,
+		empresaResolvers,
+		dataAnalysisResolvers,
 		// empresaRelacionadaResolvers,
 		// temaResolvers,
 		// noticiaResolvers,

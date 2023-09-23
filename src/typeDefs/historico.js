@@ -1,17 +1,19 @@
 export const historicoTypeDef = `
     type Historico {
-    }
-    input HistoricoInput {
+        _id: Int!
+        relatedDate: Date!
+        high: Float!
+        low: Float!
+        open: Float!
+        close: Float!
+        empresaTicker: String!
     }
     `;
 
 export const historicoQueries = `
-      allHistoricos: [Historico]!
-      historicoById(id: Int!): Historico!
+      historicoByTicker(ticker: String!): [Historico]!
   `;
 
 export const historicoMutations = `
-    createHistorico(historico: Historico!): Historico!
-    updateHistorico(id: Int!, historico: HistoricoInput!): Historico!
-    deleteHistorico(id: Int!): Int
+
 `;

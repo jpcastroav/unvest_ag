@@ -1,17 +1,29 @@
 export const empresaTypeDef = `
     type Empresa {
+        _id: Int!
+        ticker: String!
+        nombre: String!
+        descripcion: String!
+        sector: String!
+        industria: String!
+        direccion: String!
     }
     input EmpresaInput {
+        ticker: String!
+        nombre: String!
+        descripcion: String!
+        sector: String!
+        industria: String!
+        direccion: String!
     }
     `;
 
 export const empresaQueries = `
-      allEmpresas: [Empresa]!
-      empresaById(id: Int!): Empresa!
+    createEmpresaByTicker(ticker: String!): String!
+    getEmpresaByTicker(ticker: String!): Empresa!
+    getEmpresas: [Empresa]!
   `;
 
 export const empresaMutations = `
-    createEmpresa(empresa: Empresa!): Empresa!
-    updateEmpresa(id: Int!, empresa: EmpresaInput!): Empresa!
-    deleteEmpresa(id: Int!): Int
+    updateEmpresa(id: String!, empresa: EmpresaInput!): Empresa!
 `;
