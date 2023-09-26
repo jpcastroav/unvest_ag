@@ -67,44 +67,66 @@ const mergedTypeDefs = mergeSchemas(
 		'scalar JSON',
 		// historicoTypeDef,
 		// empresaTypeDef,
-		// empresaRelacionadaTypeDef,
-		// temaTypeDef,
-		// noticiaTypeDef,
+
+		//seccion news
+		empresaRelacionadaTypeDef,
+		temaTypeDef,
+		noticiaTypeDef,
+
+
 		// balanceTypeDef,
 		// operacionTypeDef,
 		// transaccionTypeDef,
 		// newsWatchListTypeDef,
 		// stockWatchListTypeDef,
+
+		//Completados
+		/*
 		perfilTypeDef,
 		usuarioTypeDef
+		*/
 	],
 	[
 		// historicoQueries,
 		// empresaQueries,
-		// empresaRelacionadaQueries,
-		// temaQueries,
-		// noticiaQueries,
+
+		//Seccion news
+		empresaRelacionadaQueries,
+		temaQueries,
+		noticiaQueries,
+
 		// balanceQueries,
 		// operacionQueries,
 		// transaccionQueries,
 		// newsWatchListQueries,
 		// stockWatchListQueries,
+
+		//Completados
+		/*
 		perfilQueries,
 		usuarioQueries
+		*/
 	],
 	[
 		// historicoMutations,
 		// empresaMutations,
-		// empresaRelacionadaMutations,
-		// temaMutations,
-		// noticiaMutations,
+
+		//Seccion news
+		empresaRelacionadaMutations,
+		temaMutations,
+		noticiaMutations,
+
 		// balanceMutations,
 		// operacionMutations,
 		// transaccionMutations,
 		// newsWatchListMutations,
 		// stockWatchListMutations,
+
+		//Completados
+		/*
 		perfilMutations,
 		usuarioMutations
+		*/
 	]
 );
 
@@ -115,15 +137,22 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON, Date: dateScalar }, 
 		// historicoResolvers,
 		// empresaResolvers,
-		// empresaRelacionadaResolvers,
-		// temaResolvers,
-		// noticiaResolvers,
+		
+		//Seccion news
+		empresaRelacionadaResolvers,
+		temaResolvers,
+		noticiaResolvers,
+		
 		// balanceResolvers,
 		// operacionResolvers,
 		// transaccionResolvers,
 		// newsWatchListResolvers,
 		// stockWatchListResolvers,
+
+		//Completados
+		/*
 		perfilResolvers,
 		usuarioResolvers
+		*/
 	)
 });
