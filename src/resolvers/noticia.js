@@ -2,7 +2,7 @@ import { generalRequest, getRequest } from '../utilities';
 import { url, port, entryPoint } from '../config/noticia';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
-
+//console.log(URL)
 const resolvers = {
 	Query: {
 		allNoticias: (_) =>
