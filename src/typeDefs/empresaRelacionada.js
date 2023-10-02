@@ -1,17 +1,18 @@
 export const empresaRelacionadaTypeDef = `
     type EmpresaRelacionada {
-    }
-    input EmpresaRelacionadaInput {
+        _id: Int!
+        ticker: String!
+        Puntuacion_de_relevancia: Float!
+        Puntuacion_de_sentimiento: Float!
+        etiqueta_del_sentimiento: String!
+        id_noticia: String!
     }
     `;
 
-export const empresaRelacionadaQueries = `
-      allEmpresaRelacionadas: [EmpresaRelacionada]!
-      empresaRelacionadaById(id: Int!): EmpresaRelacionada!
-  `;
+/*export const empresaRelacionadaQueries = `
 
-export const empresaRelacionadaMutations = `
-    createEmpresaRelacionada(empresaRelacionada: EmpresaRelacionada!): EmpresaRelacionada!
-    updateEmpresaRelacionada(id: Int!, empresaRelacionada: EmpresaRelacionada!): EmpresaRelacionada!
-    deleteEmpresaRelacionada(id: Int!): Int
-`;
+  `;*/
+
+/*export const empresaRelacionadaMutations = `
+
+`;*/

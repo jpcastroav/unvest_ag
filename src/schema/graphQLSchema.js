@@ -7,9 +7,9 @@ import { mergeSchemas } from '../utilities';
 import { historicoMutations, historicoQueries, historicoTypeDef } from '../typeDefs/historico';
 import { empresaMutations, empresaQueries, empresaTypeDef } from '../typeDefs/empresa';
 
-import { empresaRelacionadaMutations, empresaRelacionadaQueries, empresaRelacionadaTypeDef } from '../typeDefs/empresaRelacionada';
-import { temaMutations, temaQueries, temaTypeDef } from '../typeDefs/tema';
-import { noticiaMutations, noticiaQueries, noticiaTypeDef } from '../typeDefs/noticia';
+import { empresaRelacionadaTypeDef } from '../typeDefs/empresaRelacionada';
+import { temaTypeDef } from '../typeDefs/tema';
+import { noticiaQueries, noticiaTypeDef } from '../typeDefs/noticia';
 
 import { balanceMutations, balanceQueries, balanceTypeDef } from '../typeDefs/balance'
 import { operacionMutations, operacionQueries, operacionTypeDef } from '../typeDefs/operacion'
@@ -72,9 +72,9 @@ const mergedTypeDefs = mergeSchemas(
 		historicoTypeDef,
 		empresaTypeDef,
 		dataAnalysisTypeDef,
-		// empresaRelacionadaTypeDef,
-		// temaTypeDef,
-		// noticiaTypeDef,
+		empresaRelacionadaTypeDef,
+		temaTypeDef,
+		noticiaTypeDef,
 		// balanceTypeDef,
 		// operacionTypeDef,
 		// transaccionTypeDef,
@@ -82,6 +82,7 @@ const mergedTypeDefs = mergeSchemas(
 		// stockWatchListTypeDef,
 		perfilTypeDef,
 		usuarioTypeDef
+
 	],
 	[
 		historicoQueries,
@@ -89,7 +90,7 @@ const mergedTypeDefs = mergeSchemas(
 		dataAnalysisQueries,
 		// empresaRelacionadaQueries,
 		// temaQueries,
-		// noticiaQueries,
+		noticiaQueries,
 		// balanceQueries,
 		// operacionQueries,
 		// transaccionQueries,
@@ -102,9 +103,12 @@ const mergedTypeDefs = mergeSchemas(
 		historicoMutations,
 		empresaMutations,
 		dataAnalysisMutations,
-		// empresaRelacionadaMutations,
-		// temaMutations,
-		// noticiaMutations,
+
+        //Seccion news
+        /*empresaRelacionadaMutations,
+        temaMutations,
+        noticiaMutations,*/
+
 		// balanceMutations,
 		// operacionMutations,
 		// transaccionMutations,
@@ -125,7 +129,7 @@ export default makeExecutableSchema({
 		dataAnalysisResolvers,
 		// empresaRelacionadaResolvers,
 		// temaResolvers,
-		// noticiaResolvers,
+		noticiaResolvers,
 		// balanceResolvers,
 		// operacionResolvers,
 		// transaccionResolvers,
