@@ -7,9 +7,9 @@ import { mergeSchemas } from '../utilities';
 import { historicoMutations, historicoQueries, historicoTypeDef } from '../typeDefs/historico';
 import { empresaMutations, empresaQueries, empresaTypeDef } from '../typeDefs/empresa';
 
-import { empresaRelacionadaMutations, empresaRelacionadaQueries, empresaRelacionadaTypeDef } from '../typeDefs/empresaRelacionada';
-import { temaMutations, temaQueries, temaTypeDef } from '../typeDefs/tema';
-import { noticiaMutations, noticiaQueries, noticiaTypeDef } from '../typeDefs/noticia';
+import { empresaRelacionadaTypeDef } from '../typeDefs/empresaRelacionada';
+import { temaTypeDef } from '../typeDefs/tema';
+import { noticiaQueries, noticiaTypeDef } from '../typeDefs/noticia';
 
 import { balanceMutations, balanceQueries, balanceTypeDef } from '../typeDefs/balance'
 import { operacionMutations, operacionQueries, operacionTypeDef } from '../typeDefs/operacion'
@@ -81,18 +81,18 @@ const mergedTypeDefs = mergeSchemas(
 		// stockWatchListTypeDef,
 
 		//Completados
-		/*
+
 		perfilTypeDef,
 		usuarioTypeDef
-		*/
+
 	],
 	[
 		// historicoQueries,
 		// empresaQueries,
 
 		//Seccion news
-		empresaRelacionadaQueries,
-		temaQueries,
+		//empresaRelacionadaQueries,
+		//temaQueries,
 		noticiaQueries,
 
 		// balanceQueries,
@@ -102,19 +102,19 @@ const mergedTypeDefs = mergeSchemas(
 		// stockWatchListQueries,
 
 		//Completados
-		/*
+
 		perfilQueries,
 		usuarioQueries
-		*/
+
 	],
 	[
 		// historicoMutations,
 		// empresaMutations,
 
 		//Seccion news
-		empresaRelacionadaMutations,
+		/*empresaRelacionadaMutations,
 		temaMutations,
-		noticiaMutations,
+		noticiaMutations,*/
 
 		// balanceMutations,
 		// operacionMutations,
@@ -123,10 +123,10 @@ const mergedTypeDefs = mergeSchemas(
 		// stockWatchListMutations,
 
 		//Completados
-		/*
+
 		perfilMutations,
 		usuarioMutations
-		*/
+
 	]
 );
 
@@ -139,8 +139,8 @@ export default makeExecutableSchema({
 		// empresaResolvers,
 		
 		//Seccion news
-		empresaRelacionadaResolvers,
-		temaResolvers,
+		//empresaRelacionadaResolvers,
+		//temaResolvers,
 		noticiaResolvers,
 		
 		// balanceResolvers,
