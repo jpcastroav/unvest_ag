@@ -1,11 +1,12 @@
 import { generalRequest, getRequest } from '../utilities';
 import { url, port, entryPoint } from '../config/balance';
+import { urlAuth, portAuth, entryPointAuth } from "../config/usuario";
 
 const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		allBalances: (_) =>
+		allBalances: (_, __, context) =>
 			getRequest(URL, ''),
         balanceById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),

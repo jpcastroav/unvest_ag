@@ -1,14 +1,21 @@
 export const usuarioTypeDef = `
     type Usuario {
-        id: Int!
-        nombre_usuario: String!
-        password: String!
-        activo: Boolean!
+        idUser: Int!
+        nameUser: String!
+        passwordUser: String!
+        roleUser: String!
+        activeUser: Boolean!
     }
     input UsuarioInput {
-        nombre_usuario: String!
-        password: String!
-        activo: Boolean!
+        nameUser: String!
+        passwordUser: String!
+        roleUser: String!
+        activeUser: Boolean!
+    }
+    
+    input UsuarioLogin {
+        nameUser: String!
+        passwordUser: String!
     }
     `;
 
@@ -21,4 +28,5 @@ export const usuarioMutations = `
     createUsuario(usuario: UsuarioInput!): Usuario!
     updateUsuario(id: Int!, usuario: UsuarioInput!): Usuario!
     deleteUsuario(id: Int!): Int
+    loginUsuario(usuario: UsuarioLogin!): String!
 `;

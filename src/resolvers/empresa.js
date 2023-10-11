@@ -1,24 +1,33 @@
 import { generalRequest, getRequest } from '../utilities';
 import { url, port } from '../config/empresa';
+import { validate } from "../auth/validate";
 
 const URL = `http://${url}:${port}`;
 
 const resolvers = {
 	Query: {
-		createEmpresaByTicker: (_, { ticker }) => {
-			return generalRequest(`${URL}/create/empresa/${ticker}`, 'POST').then(r => {
-				return r.message;
-			})
+		createEmpresaByTicker: (_, { ticker }, context) => {
+			return validate(context.token || '').then(() => {
+				return generalRequest(`${URL}/create/empresa/${ticker}`, 'POST').then(r => {
+					return r.message;
+				})
+			}).catch(err => {
+				return err;
+			});
 		},
 /*
 	query {
   		createEmpresaByTicker (ticker: "AMZN")
 	}
  */
-		getEmpresaByTicker: (_, { ticker }) => {
-			return generalRequest(`${URL}/get/empresa/${ticker}`, 'GET').then(r => {
-				return r.data.empresa;
-			})
+		getEmpresaByTicker: (_, { ticker }, context) => {
+			return validate(context.token || '').then(() => {
+				return generalRequest(`${URL}/get/empresa/${ticker}`, 'GET').then(r => {
+					return r.data.empresa;
+				})
+			}).catch(err => {
+				return err;
+			});
 		},
 /*
 	query {
@@ -28,10 +37,14 @@ const resolvers = {
   			}
 	}
  */
-		getEmpresas: (_) => {
-			return generalRequest(`${URL}/get/empresas`, 'GET').then(r => {
-				return r.data.empresas;
-			})
+		getEmpresas: (_, __, context) => {
+			return validate(context.token || '').then(() => {
+				return generalRequest(`${URL}/get/empresas`, 'GET').then(r => {
+					return r.data.empresas;
+				})
+			}).catch(err => {
+				return err;
+			});
 		}
 	},
 /*
@@ -44,10 +57,14 @@ const resolvers = {
  */
 
 	Mutation: {
-		updateEmpresa: (_, { id, empresa }) => {
-			return generalRequest(`${URL}/update/empresa/${id}`, 'PUT', empresa).then(r => {
-				return r.data.empresaUpdated;
-			})
+		updateEmpresa: (_, { id, empresa }, context) => {
+			return validate(context.token || '').then(r => {
+				return generalRequest(`${URL}/update/empresa/${id}`, 'PUT', empresa).then(r => {
+					return r.data.empresa;
+				})
+			}).catch(err => {
+				return err;
+			});
 		},
 		/*
 			mutation {

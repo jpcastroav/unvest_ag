@@ -1,0 +1,7 @@
+Build the Docker Image
+
+RUN "docker build -t api_gw ."
+
+Run the Docker Container
+
+RUN "docker run --name api_gw --network mynetwork  -d -p 5500:5500 api_gw"
