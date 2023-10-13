@@ -1,6 +1,6 @@
 export const empresaTypeDef = `
     type Empresa {
-        _id: Int!
+        _id: String!
         ticker: String!
         nombre: String!
         descripcion: String!

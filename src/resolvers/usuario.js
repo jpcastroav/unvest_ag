@@ -31,6 +31,16 @@ const resolvers = {
 			}).catch(err => {
 				return err;
 			});
+		},
+		getIDUsuario: (_, __, context) => {
+			return validate(context.token || '').then(() => {
+				const tokenWithoutBearer = context.token.replace('Bearer ', '');
+				return generalRequest(`${URL}/getID?token=${tokenWithoutBearer}`, 'GET').then(r => {
+					return r;
+				})
+			}).catch(err => {
+				return err;
+			});
 		}
 	},
 	Mutation: {
@@ -55,7 +65,7 @@ const resolvers = {
 			});
 		},
 		loginUsuario: (_, { usuario }) =>
-			generalRequest(`${URL}/login`, 'POST', usuario)
+			generalRequest(`${URL}/login`, 'POST', usuario),
 	}
 };
 

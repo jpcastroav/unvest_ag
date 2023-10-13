@@ -22,6 +22,7 @@ export const usuarioTypeDef = `
 export const usuarioQueries = `
       allUsuarios: [Usuario]!
       usuarioById(id: Int!): Usuario!
+      getIDUsuario: String!
   `;
 
 export const usuarioMutations = `

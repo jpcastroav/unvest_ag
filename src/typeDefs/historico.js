@@ -1,6 +1,6 @@
 export const historicoTypeDef = `
     type Historico {
-        _id: Int!
+        _id: String!
         relatedDate: Date!
         high: Float!
         low: Float!
