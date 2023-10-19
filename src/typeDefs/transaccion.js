@@ -5,12 +5,12 @@ export const transaccionTypeDef = `
         tipo: Int!
         valor_accion: Float!
         cantidad: Float!
-        id_empresa: Int!
+        id_empresa: String!
         id_usuario: Int!
 
     }
     type OwnedStock {
-        id_empresa: Int!
+        id_empresa: String!
         cantidad: Float!
     }
     input TransaccionInput {
@@ -18,7 +18,7 @@ export const transaccionTypeDef = `
         tipo: Int!
         valor_accion: Float!
         cantidad: Float!
-        id_empresa: Int!
+        id_empresa: String!
         id_usuario: Int!
     }
     `;
