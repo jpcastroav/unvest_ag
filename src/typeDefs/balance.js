@@ -13,10 +13,9 @@ export const balanceTypeDef = `
 export const balanceQueries = `
       allBalances: [Balance]!
       balanceById(id: Int!): Balance!
+      balanceByUserId(userId: Int!): Balance!
   `;
 
 export const balanceMutations = `
     createBalance(balance: BalanceInput!): Balance!
-    updateBalance(id: Int!, balance: BalanceInput!): Balance!
-    deleteBalance(id: Int!): Int
 `;

@@ -25,31 +25,21 @@ const resolvers = {
 				return err;
 			});
 		},
+		balanceByUserId: (_, { userId }, context) => {
+			return validate(context.token || '').then(() => {
+				return generalRequest(`${URL}/byUserId/${userId}`, 'GET').then(r => {
+					return r;
+				})
+			}).catch(err => {
+				return err;
+			});
+		}
 	},
 	Mutation: {
 		createBalance: (_, { balance }) => {
 
 			return validate(context.token || '').then(() => {
 				return generalRequest(`${URL}/`, 'POST', balance).then(r => {
-					return r;
-				})
-			}).catch(err => {
-				return err;
-			});
-		},
-		updateBalance: (_, { id, balance }) => {
-			return validate(context.token || '').then(() => {
-				return generalRequest(`${URL}/${id}`, 'PUT', balance).then(r => {
-					return r;
-				})
-			}).catch(err => {
-				return err;
-			});
-		},
-		deleteBalance: (_, { id }) => {
-
-			return validate(context.token || '').then(() => {
-				return generalRequest(`${URL}/${id}`, 'DELETE').then(r => {
 					return r;
 				})
 			}).catch(err => {

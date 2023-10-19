@@ -21,3 +21,5 @@ lerna-debug.log*
 
 # Directorio de construcción
 /build/
+
+package-lock.json

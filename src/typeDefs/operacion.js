@@ -21,6 +21,4 @@ export const operacionQueries = `
 
 export const operacionMutations = `
     createOperacion(operacion: OperacionInput!): Operacion!
-    updateOperacion(id: Int!, operacion: OperacionInput!): Operacion!
-    deleteOperacion(id: Int!): Int
 `;

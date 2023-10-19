@@ -63,29 +63,20 @@ const resolvers = {
 				return err;
 			});
 		},
+		getOwnedStocks: (_, { userId }, context) => {
+			return validate(context.token || '').then(() => {
+				return generalRequest(`${URL}/getOwnedStocks/${userId}`, 'GET').then(r => {
+					return r;
+				})
+			}).catch(err => {
+				return err;
+			});
+		}
 	},
 	Mutation: {
 		createTransaccion: (_, { transaccion }, context) => {
 			return validate(context.token || '').then(() => {
 				return generalRequest(`${URL}/`, 'POST', transaccion).then(r => {
-					return r;
-				})
-			}).catch(err => {
-				return err;
-			});
-		},
-		updateTransaccion: (_, { id, transaccion }, context) => {
-			return validate(context.token || '').then(() => {
-				return generalRequest(`${URL}/${id}`, 'PUT', transaccion).then(r => {
-					return r;
-				})
-			}).catch(err => {
-				return err;
-			});
-		},
-		deleteTransaccion: (_, { id }, context) => {
-			return validate(context.token || '').then(() => {
-				return generalRequest(`${URL}/${id}`, 'DELETE').then(r => {
 					return r;
 				})
 			}).catch(err => {

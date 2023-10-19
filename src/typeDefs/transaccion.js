@@ -9,6 +9,10 @@ export const transaccionTypeDef = `
         id_usuario: Int!
 
     }
+    type OwnedStock {
+        id_empresa: Int!
+        cantidad: Float!
+    }
     input TransaccionInput {
         fecha: Date!
         tipo: Int!
@@ -22,10 +26,9 @@ export const transaccionTypeDef = `
 export const transaccionQueries = `
       allTransacciones: [Transaccion]!
       transaccionById(id: Int!): Transaccion!
+      getOwnedStocks(userId: Int!): [OwnedStock]!
   `;
 
 export const transaccionMutations = `
     createTransaccion(transaccion: TransaccionInput!): Transaccion!
-    updateTransaccion(id: Int!, transaccion: TransaccionInput!): Transaccion!
-    deleteTransaccion(id: Int!): Int
 `;

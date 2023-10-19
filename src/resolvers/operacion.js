@@ -34,24 +34,6 @@ const resolvers = {
 			}).catch(err => {
 				return err;
 			})
-		},
-		updateOperacion: (_, { id, operacion }, context) => {
-			return validate(context.token || '').then(() => {
-				return generalRequest(`${URL}/${id}`, 'PUT', operacion).then(r => {
-					return r;
-				})
-			}).catch(err => {
-				return err;
-			})
-		},
-		deleteOperacion: (_, { id }, context) => {
-			return validate(context.token || '').then(() => {
-				return generalRequest(`${URL}/${id}`, 'DELETE').then(r => {
-					return r;
-				})
-			}).catch(err => {
-				return err;
-			})
 		}
 	}
 };
