@@ -78,8 +78,8 @@ const mergedTypeDefs = mergeSchemas(
 		balanceTypeDef,
 		operacionTypeDef,
 		transaccionTypeDef,
-		// newsWatchListTypeDef,
-		// stockWatchListTypeDef,
+		newsWatchListTypeDef,
+		stockWatchListTypeDef,
 		perfilTypeDef,
 		usuarioTypeDef
 
@@ -94,8 +94,8 @@ const mergedTypeDefs = mergeSchemas(
 		balanceQueries,
 		operacionQueries,
 		transaccionQueries,
-		// newsWatchListQueries,
-		// stockWatchListQueries,
+		newsWatchListQueries,
+		stockWatchListQueries,
 		perfilQueries,
 		usuarioQueries
 	],
@@ -112,8 +112,8 @@ const mergedTypeDefs = mergeSchemas(
 		balanceMutations,
 		operacionMutations,
 		transaccionMutations,
-		// newsWatchListMutations,
-		// stockWatchListMutations,
+		newsWatchListMutations,
+		stockWatchListMutations,
 		perfilMutations,
 		usuarioMutations
 	]
@@ -133,8 +133,8 @@ export default makeExecutableSchema({
 		balanceResolvers,
 		operacionResolvers,
 		transaccionResolvers,
-		// newsWatchListResolvers,
-		// stockWatchListResolvers,
+		newsWatchListResolvers,
+		stockWatchListResolvers,
 		perfilResolvers,
 		usuarioResolvers
 	)

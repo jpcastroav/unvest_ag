@@ -1,7 +1,10 @@
 export const stockWatchListTypeDef = `
     type StockWatchList {
+        id: Int!
+        id_stock: Int!
     }
     input StockWatchListInput {
+        id_stock: Int!
     }
     `;
 
